@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+}
+
+.box {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 80%;
+    max-width: 400px;
+}
+
+h1 {
+    color: #ff4f81;
+}
+
+button {
+    border: none;
+    border-radius: 15px;
+    padding: 13px 25px;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#yes {
+    background: #ff6b9a;
+    color: white;
+}
+
+#no {
+    background: #ddd;
+}
+
+#message {
+    color: #ff4f81;
+    font-size: 18px;
+    min-height: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="mainBox">
+
+    <h1>Will you be my girlfriend? ❤️</h1>
+
+    <button id="yes" onclick="yesClick()">YES ❤️</button>
+
+    <button id="no" onclick="noClick()">NO 😭</button>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+
+let noSize = 20;
+let count = 0;
+
+const messages = [
+    "ထပ်စဉ်းစားပါဦး 🥺❤️",
+    "တကယ်ကြီး No လား? 😭",
+    "Please give me a chance 🥺❤️",
+    "နည်းနည်းလေးပဲ စဉ်းစားပေးပါနော် 😭",
+    "NO ကို မနှိပ်နဲ့တော့ 😂❤️",
+    "YES လေးနှိပ်ပါနော် 🥰❤️"
+];
+
+function noClick() {
+
+    noSize -= 2;
+
+    if (noSize < 8) {
+        noSize = 8;
+    }
+
+    document.getElementById("no").style.fontSize =
+        noSize + "px";
+
+    document.getElementById("message").innerText =
+        messages[count % messages.length];
+
+    count++;
+}
+
+function yesClick() {
+
+    document.body.innerHTML = `
+        <div style="
+            text-align:center;
+            font-family:Arial,sans-serif;
+            padding:30px;
+        ">
+            <h1 style="font-size:45px;color:#ff4f81;">
+                YAYYYY! ❤️🥰
+            </h1>
+
+            <h2>You are my girlfriend now! 💕</h2>
+
+            <p style="font-size:25px;">
+                I Love You ❤️
+            </p>
+
+            <p style="font-size:30px;">
+                💗 💕 💖 💕 💗
+            </p>
+        </div>
+    `;
+
+}
+
+</script>
+
+</body>
+</html>
